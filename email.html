@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>H&M </title>
+      <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a4/jquery.mobile-1.0a4.min.css" />
+      <script src="http://code.jquery.com/jquery-1.5.2.min.js"></script>
+    
+
+	<script src="http://code.jquery.com/mobile/1.0a4/jquery.mobile-1.0a4.min.js"></script>
+	
+</head>
+<body>
+<script type="text/javascript" src="scripts/email.js"></script>
+  
+    <!-- call ajax page -->
+    <div data-role="page" data-theme="d" id="callAjaxPage">
+	<br><br><br><br><br><br><br><br><br><br><br>
+        <div data-role="content">
+            <form id="callAjaxForm">
+                <div data-role="fieldcontain">
+				<center><TABLE BORDER="0">
+                   <TR>
+                    <TD>Name:</label></TD>
+                   <TD> <input type="text" name="Name" id="Name" value=""  />
+					</TD>
+					</TR>
+					<TR>
+					
+					
+					 <TD><label for="date">Date: </label></TD>
+                   <TD> <input type="date" name="date" id="date" value=""  /></TD>
+					</TR>
+					<TR>
+					<TD><label for="time">Time:</label></TD>
+                    <TD><input type="time" name="time" id="time" value=""  /></TD>
+					</TR>
+					<TR>
+					
+					<TD><label for="phone">Phone:</label></TD>
+                   <TD><input type="text" name="phone" id="phone" value=""  /></TD>
+					</TR>
+					<TR>
+					
+	<TD><label for="chicken" class="select" data-theme="d" >Chicken</label></TD>
+					<TD>	<select name="chicken" id="chicken" data-theme="d">
+					<option value="None">None</option>
+							<option value= "Party of 25-Chicken">Party of 25:$112.00</option>
+							<option value="Party of 50-Chicken">Party of 50:$200.00</option>
+							<option value="Party of 75-Chicken">Party of 75:$288.00</option>
+							<option value="Party of 100-Chicken">Party of 100:$376.00</option>
+						
+						</select>
+						
+						<label for="qtyChicken" class="select" data-theme="d" ></label>
+						<select name="qtyChicken" id="qtyqtyChicken" data-theme="d">
+						<option value="0">0</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+						</select>
+						</TD>
+					
+						</TR>
+						
+					<TR>
+						
+						<TD>	<label for="rib" class="select" data-theme="d" >Ribs</label></TD>
+						<TD><select name="rib" id="rib" data-theme="d">
+						<option value="None">None</option>
+							<option value="Party of 25-Rib">Party of 25:$112.00</option>
+							<option value="Party of 50-Rib">Party of 50:$200.00</option>
+							<option value="Party of 75-Rib">Party of 75:$288.00</option>
+							<option value="Party of 100-Rib">Party of 100:$376.00</option>
+						</select>
+						<label for="qtyRib" class="select" data-theme="d" ></label>
+						<select name="qtyRib" id="qty" data-theme="d">
+						<option value="0">0</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+						</select>
+						</TD>
+					
+						</TR>
+					<TR>
+						
+							<TD><label for="pork" class="select" data-theme="d" >Pork</label></TD>
+						<TD><select name="pork" id="pork" data-theme="d">
+						<option value="None">None</option>
+							<option value="Pulled Pork">Pulled Pork:$10/lb</option>
+							<option value="Sausages">Sausages: $3.00</option>
+						</select>
+						<label for="qtyPork" class="select" data-theme="d" ></label>
+						<select name="qtyPork" id="qty" data-theme="d">
+						<option value="0">0</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+						</select>
+						</TD>
+					
+						</TR>
+					<TR>
+						
+							<TD><label for="side" class="select" data-theme="d" >Sides(per pan)</label></TD>
+						<TD><select name="side" id="side" data-theme="d">
+						<option value="None">None</option>
+							<option value="Baked Beans">Baked Beans:$20.00</option>
+							<option value="Cole Slaw">Cole Slaw:$20.00</option>
+							<option value="Macaroni and Cheese">Mac and Cheese:$30.00</option>
+							<option value="Potato Salad">Potato Salad: $30.00</option>
+							<option value="Collard Greens">Collard Greens: $30.00</option>
+						</select>
+						
+						<label for="qtySide" class="select" data-theme="d" ></label>
+						<select name="qtySide" id="qtyside" data-theme="d">
+						<option value="0">0</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+						</select>
+						</TD>
+					
+						</TR>
+					<TR>
+						
+						<TD><label for="dessert" class="select" data-theme="d" >Sides(per pan)</label></TD>
+						<TD><select name="dessert" id="dessert" data-theme="d">
+						<option value="None">None</option>
+							<option value="Pound Cake">Pound Cake(whole):$25.00</option>
+							<option value="Cookies">Cookies(1 Dozen):$10.00</option>
+						</select>
+						
+						<label for="qtyDessert" class="select" data-theme="d" ></label>
+						<select name="qtyDessert" id="qty" data-theme="d">
+						<option value="0">0</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+						</select>
+						</TD>
+					
+						</TR>
+						</TABLE></center>
+						
+						
+                    <h3 id="notification"></h3>
+                    <button data-theme="b" id="submit" type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+  <div data-role="footer" data-theme="d" data-position="fixed">
+	<h1></h1>
+</div>
+    </div>
+</body>
+</html>

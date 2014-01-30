@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>H&M </title>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<script type="text/javascript" src="scripts/email.js"></script>
+	<link href="http://code.jquery.com/mobile/1.0rc2/jquery.mobile-1.0rc2.min.css" rel="stylesheet" />
+	<link href="css/jquery-mobile.css" type="text/css" rel="stylesheet" />
+	
+	<link href="css/photoswipe.css" type="text/css" rel="stylesheet" />
+	<script type="text/javascript" src="js/klass.min.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/mobile/1.0rc2/jquery.mobile-1.0rc2.min.js"></script>
+	<script type="text/javascript" src="js/code.photoswipe.jquery-3.0.5.min.js"></script>
+	
+		
+	
+	<script type="text/javascript">
+		
+		/*
+		 * IMPORTANT!!!
+		 * REMEMBER TO ADD  rel="external"  to your anchor tags. 
+		 * If you don't this will mess with how jQuery Mobile works
+		 */
+		
+		(function(window, $, PhotoSwipe){
+			
+			$(document).ready(function(){
+				
+				$('div.gallery-page')
+					.live('pageshow', function(e){
+						
+						var 
+							currentPage = $(e.target),
+							options = {},
+							photoSwipeInstance = $("ul.gallery a", e.target).photoSwipe(options,  currentPage.attr('id'));
+							
+						return true;
+						
+					})
+					
+					.live('pagehide', function(e){
+						
+						var 
+							currentPage = $(e.target),
+							photoSwipeInstance = PhotoSwipe.getInstance(currentPage.attr('id'));
+
+						if (typeof photoSwipeInstance != "undefined" && photoSwipeInstance != null) {
+							PhotoSwipe.detatch(photoSwipeInstance);
+						}
+						
+						return true;
+						
+					});
+				
+			});
+		
+		}(window, window.jQuery, window.Code.PhotoSwipe));
+		
+	</script>
+	
+</head>
+<body>
+
+<div data-role="page" class="gallery-page1" data-theme="a">
+<div data-role="header" data-theme="a" data-position="fixed" >
+	<img src = "images/header.png" alt = "live" width="100%" height="200px"/>
+	</div><!-- /header -->
+	<div data-role="content"  data-theme="a">		
+		
+		<ul data-role="listview" data-theme="d" data-inset="true">
+		<li><a href="aboutus.html"><img src="images/info.png" /><h3>About Us</h3></a></li> 
+		<li><a href="menu.html"><img src="images/ca.png" /><h3>Menu</h3></a></li> 
+		<li><a href="#callAjaxPage"><img src="images/cal.png" /><h3>Order Now</h3></a></li>  
+			<li><a href="map.html"><img src="images/phone.png" /><h3>Contact Us</h3></a></li> 
+		</ul> 
+
+		</div>
+		
+		<center><P><h2>Mobile BBQ: (850)567-7393</h2></P></center>
+<div data-role="footer" data-theme="a" data-position="fixed">
+	<h1></h1>
+</div>
+	</div>
+
+
+
+<div data-role="page" id="callAjaxPage" class="gallery-page">
+<script type="text/javascript" src="scripts/email.js"></script>
+<div data-role="header" data-theme="a" data-position="fixed" >
+	<img src = "images/header.png" alt = "live" width="100%" height="200px"/>
+	</div><!-- /header -->
+        <div data-role="content">        
+                
+<form id="callAjaxForm" data-role="collapsible">
+<h3>H & M Ordering</h3>
+                <div data-role="fieldcontain">
+				<center><TABLE BORDER="0">
+                   <TR>
+                    <TD><label for="firstName">Name</label></TD>
+                   <TD> <input type="text" name="Name" id="Name" value=""  />
+					</TD>
+					<TR>
+					
+					
+					 <TD><label for="date">Date: </label></TD>
+                   <TD> <input type="date" name="date" id="date" value=""  /></TD>
+					</TR>
+					<TR>
+					<TD><label for="time">Time:</label></TD>
+                    <TD><input type="time" name="time" id="time" value=""  /></TD>
+					</TR>
+					<TR>
+					
+					<TD><label for="phone">Phone:</label></TD>
+                   <TD><input type="text" name="phone" id="phone" value=""  /></TD>
+					</TR>
+			
+					
+	
+						</TABLE>	
+						
+						<legend><b>Chicken:<b></legend>
+						<fieldset data-role="controlgroup">
+<Button data-mini="true">Dark Meat(3pc(w/2sides)):$6.99</Button>
+		
+		<label for="qtySide" class="select" data-theme="d"data-mini="true" ></label>
+						<select name="qtySide" id="qtySide" data-theme="d" data-mini="true">
+						<option value="0">0</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+						</select>
+						</fieldset>
+						
+						<fieldset data-role="controlgroup">					
+<Button data-mini="true">Mixed meat(3pc(w/2sides)):$7.99</Button>
+			
+<label for="qtySide2" class="select" data-theme="d"data-mini="true" ></label>
+						<select name="qtySide2" id="qtyside2" data-theme="d" data-mini="true">
+						<option value="0">0</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+						</select></fieldset>
+						
+						
+						<fieldset data-role="controlgroup">
+<Button data-mini="true">White Meat(3pc(w/2 sides)):$8.99</Button>
+
+<label for="qtySide3" class="select" data-theme="d"data-mini="true" ></label>
+						<select name="qtySide3" id="qtyside3" data-theme="d" data-mini="true">
+						<option value="0">0</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+						</select></fieldset>
+						
+							
+						<fieldset data-role="controlgroup">
+<Button data-mini="true">Whole Chicken:$11.99</Button>
+
+<label for="qtySide4" class="select" data-theme="d"data-mini="true" ></label>
+						<select name="qtySide4" id="qtyside4" data-theme="d" data-mini="true">
+						<option value="0">0</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+						</select></fieldset>
+						
+						<fieldset data-role="controlgroup">
+<Button data-mini="true">Chicken Sandwich:$2.99</Button>
+
+<label for="qtySide5" class="select" data-theme="d"data-mini="true" ></label>
+						<select name="qtySide5" id="qtyside5" data-theme="d" data-mini="true">
+						<option value="0">0</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+						</select></fieldset>
+						
+						
+					<legend>Ribs:</legend>	
+					<fieldset data-role="controlgroup">
+<Button data-mini="true">Rib Dinner(3 bnes w/ 2 sides)</Button>
+
+<label for="qtySide6" class="select" data-theme="d"data-mini="true" ></label>
+						<select name="qtySide6" id="qtyside6" data-theme="d" data-mini="true">
+						<option value="0">0</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+						</select></fieldset>
+					<fieldset data-role="controlgroup">	
+<Button data-mini="true">Rib Sandwich:$5.99</Button>
+
+<label for="qtySide7" class="select" data-theme="d"data-mini="true" ></label>
+						<select name="qtySide7" id="qtyside7" data-theme="d" data-mini="true">
+						<option value="0">0</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+						</select></fieldset>
+						
+						<fieldset data-role="controlgroup">	
+<Button data-mini="true">Full Slab:$19.99</Button>
+
+<label for="qtySide8" class="select" data-theme="d"data-mini="true" ></label>
+						<select name="qtySide8" id="qtyside8" data-theme="d" data-mini="true">
+						<option value="0">0</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+						</select></fieldset>
+						
+						<fieldset data-role="controlgroup">	
+<Button data-mini="true">1/2 Slab(meat only):$9.99</Button>
+
+<label for="qtySide9" class="select" data-theme="d"data-mini="true" ></label>
+						<select name="qtySide9" id="qtyside9" data-theme="d" data-mini="true">
+						<option value="0">0</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+						</select></fieldset>
+						
+						<legend><b>Pork<b></legend>
+						<fieldset data-role="controlgroup">
+<Button data-mini="true">Pulled Pork Sandwich:$4.99</Button>
+		
+		<label for="qtySide10" class="select" data-theme="d"data-mini="true" ></label>
+						<select name="qtySide10" id="qtyside10" data-theme="d" data-mini="true">
+						<option value="0">0</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+						</select>
+						</fieldset>
+	<fieldset data-role="controlgroup">					
+<Button data-mini="true">Pulled Pork Dinner (w/ 2 sides):$7.99</Button>
+			
+<label for="qtySide11" class="select" data-theme="d"data-mini="true" ></label>
+						<select name="qtySide11" id="qtyside11" data-theme="d" data-mini="true">
+						<option value="0">0</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+						</select></fieldset>
+						<fieldset data-role="controlgroup">
+<Button data-mini="true">Sausage w/ cole slaw($.50):$2.99</Button>
+
+<label for="qtySide12" class="select" data-theme="d"data-mini="true" ></label>
+						<select name="qtySide12" id="qtyside12" data-theme="d" data-mini="true">
+						<option value="0">0</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+						</select></fieldset>
+						
+						<fieldset data-role="controlgroup">
+<Button data-mini="true">Beef Sausage w/ cole slaw($.50):$3.99</Button>
+
+<label for="qtySide13" class="select" data-theme="d"data-mini="true" ></label>
+						<select name="qtySide13" id="qtyside13" data-theme="d" data-mini="true">
+						<option value="0">0</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+						</select></fieldset>
+						
+					<legend>Combos:</legend>	
+					<fieldset data-role="controlgroup">	
+<Button data-mini="true">Rib & Chicken Dinner<br> (w/ 2 sides):$10.99</Button>
+
+<label for="qtySide14" class="select" data-theme="d"data-mini="true" ></label>
+						<select name="qtySide14" id="qtyside14" data-theme="d" data-mini="true">
+						<option value="0">0</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+						</select></fieldset>
+					<fieldset data-role="controlgroup">	
+<Button data-mini="true">Rib & Chicken Combo<br>(Meat Only - includes:1/2 slab of Ribs with 2 wings and legs):$14.99</Button>
+
+<label for="qtySide15" class="select" data-theme="d"data-mini="true" ></label>
+						<select name="qtySide15" id="qtyside15" data-theme="d" data-mini="true">
+						<option value="0">0</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+						</select></fieldset>
+						
+						
+						<legend><b>Sides:<b></legend>
+						<fieldset data-role="controlgroup">
+<Button data-mini="true">Hungery Man Meal<br>(w/1 side, 1/2 slab of ribs, 2 pcs of chicken:$11.99)</Button>
+		
+		<label for="qtySide16" class="select" data-theme="d"data-mini="true" ></label>
+						<select name="qtySide16" id="qtyside16" data-theme="d" data-mini="true">
+						<option value="0">0</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+						</select>
+						</fieldset>
+	<fieldset data-role="controlgroup">					 
+<Button data-mini="true">Rib & Pulled Pork Dinner<br> (w/ 2 sides) and Sweet Tea:$12.99</Button>
+			
+<label for="qtySide17" class="select" data-theme="d"data-mini="true" ></label>
+						<select name="qtySide17" id="qtyside17" data-theme="d" data-mini="true">
+						<option value="0">0</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+						</select></fieldset>
+						<fieldset data-role="controlgroup">
+<Button data-mini="true">Feast for Four <br>(includes whole salb,whole chicken, 2 sides and 4 drinks):$35.99</Button>
+
+<label for="qtySide18" class="select" data-theme="d"data-mini="true" ></label>
+						<select name="qtySide18" id="qtyside18" data-theme="d" data-mini="true">
+						<option value="0">0</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+						</select></fieldset>
+						
+					<legend>Sides:</legend>	
+					<fieldset data-role="controlgroup">
+<Button data-mini="true">Baked Beans:$1.99</Button>
+
+<label for="qtySide19" class="select" data-theme="d"data-mini="true" ></label>
+						<select name="qtySide19" id="qtyside19" data-theme="d" data-mini="true">
+						<option value="0">0</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+						</select></fieldset>
+					<fieldset data-role="controlgroup">	
+<Button data-mini="true">Cole Slaw:$1.99</Button>
+
+<label for="qtySide20" class="select" data-theme="d"data-mini="true" ></label>
+						<select name="qtySide20" id="qtyside20" data-theme="d" data-mini="true">
+						<option value="0">0</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+						</select></fieldset>
+						
+						<fieldset data-role="controlgroup">	
+<Button data-mini="true">Mac & Cheese:$2.99</Button>
+
+<label for="qtySide21" class="select" data-theme="d"data-mini="true" ></label>
+						<select name="qtySide21" id="qtyside21" data-theme="d" data-mini="true">
+						<option value="0">0</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+						</select></fieldset>
+						<fieldset data-role="controlgroup">	
+<Button data-mini="true">Potato Salad:$2.99</Button>
+
+<label for="qtySide22" class="select" data-theme="d"data-mini="true" ></label>
+						<select name="qtySide22" id="qtyside22" data-theme="d" data-mini="true">
+						<option value="0">0</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+						</select></fieldset>
+						<fieldset data-role="controlgroup">	
+<Button data-mini="true">Collard Greens:$.99</Button>
+
+<label for="qtySide23" class="select" data-theme="d"data-mini="true" ></label>
+						<select name="qtySide23" id="qtyside23" data-theme="d" data-mini="true">
+						<option value="0">0</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+						</select></fieldset>
+						
+						
+						
+						<legend>Other:</legend>	
+					<fieldset data-role="controlgroup">
+<Button data-mini="true">Extra BBQ Sauce:$.99</Button>
+
+<label for="qtySide24" class="select" data-theme="d"data-mini="true" ></label>
+						<select name="qtySide24" id="qtyside24" data-theme="d" data-mini="true">
+						<option value="0">0</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+						</select></fieldset>
+					<fieldset data-role="controlgroup">	
+<Button data-mini="true">Cake:$2.99</Button>
+
+<label for="qtySide25" class="select" data-theme="d"data-mini="true" ></label>
+						<select name="qtySide25" id="qtyside25" data-theme="d" data-mini="true">
+						<option value="0">0</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+						</select></fieldset>
+						
+						<fieldset data-role="controlgroup">	
+<Button data-mini="true">Cookies:$1.99</Button>
+
+<label for="qtySide26" class="select" data-theme="d"data-mini="true" ></label>
+						<select name="qtySide26" id="qtyside26" data-theme="d" data-mini="true">
+						<option value="0">0</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+						</select></fieldset>
+						<fieldset data-role="controlgroup">	
+<Button data-mini="true">Whole Pound Cake:$20.99</Button>
+
+<label for="qtySide27" class="select" data-theme="d"data-mini="true" ></label>
+						<select name="qtySide27" id="qtyside27" data-theme="d" data-mini="true">
+						<option value="0">0</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+						</select></fieldset>
+						<fieldset data-role="controlgroup">	
+<Button data-mini="true">Soft Drinks:$.99</Button>
+
+<label for="qtySide28" class="select" data-theme="d"data-mini="true" ></label>
+						<select name="qtySide28" id="qtyside28" data-theme="d" data-mini="true">
+						<option value="0">0</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+						</select></fieldset>
+						
+						<fieldset data-role="controlgroup">	
+<Button data-mini="true">Sweet Tea:$1.79</Button>
+
+<label for="qtySide29" class="select" data-theme="d"data-mini="true" ></label>
+						<select name="qtySide29" id="qtyside29" data-theme="d" data-mini="true">
+						<option value="0">0</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+						</select></fieldset>
+						
+						</center>
+						
+						
+                    <h3 id="notification"></h3>
+                    <button data-theme="b" id="submit" type="submit" onsubmit="setTimeout(function () { window.location.reload(); }, 1)">Submit</button>
+                </div>
+            </form>
+		
+	</div>
+	
+</body>
+</html>
